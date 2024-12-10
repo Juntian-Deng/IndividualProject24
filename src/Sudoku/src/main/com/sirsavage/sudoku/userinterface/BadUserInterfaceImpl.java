@@ -23,7 +23,7 @@ import com.sirsavage.sudoku.problemdomain.Coordinates;
 import com.sirsavage.sudoku.problemdomain.SudokuGame;
 
 /**
- * Manages the window, and displays a pop up notification when the user completes the puzzle.
+ * Manages the window, snd handles win conditions
  */
 public class BadUserInterfaceImpl implements IUserInterfaceContract.View,
         EventHandler<KeyEvent> {
@@ -68,7 +68,7 @@ public class BadUserInterfaceImpl implements IUserInterfaceContract.View,
             for (int yIndex = 0; yIndex < 9; yIndex++) {
                 int x = xOrigin + xIndex * xAndYDelta;
                 int y = yOrigin + yIndex * xAndYDelta;
-                //draw it
+                //drawing board
                 SudokuTextField stf = new SudokuTextField(xIndex, yIndex);
                 Font numberFont = new Font(32);
                 stf.setFont(numberFont);
@@ -128,10 +128,7 @@ public class BadUserInterfaceImpl implements IUserInterfaceContract.View,
         this.listener = listener;
     }
 
-    /**
-     * Each time the user makes an input (which can be 0 to delete a number), we update the user
-     * interface appropriately.
-     */
+    //Updates UI
     @Override
     public void updateSquare(int x, int y, int input) {
         SudokuTextField tile = textFieldCoordinates.get(new Coordinates(x, y));
