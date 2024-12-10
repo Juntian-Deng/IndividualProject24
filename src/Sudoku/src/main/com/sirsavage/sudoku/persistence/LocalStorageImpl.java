@@ -5,13 +5,7 @@ import java.io.*;
 import com.sirsavage.sudoku.problemdomain.IStorage;
 import com.sirsavage.sudoku.problemdomain.SudokuGame;
 
-
-/**
- * JSON is a simple language which is commonly used for storage and data transfer in Desktop, Web, and Mobile
- * programming. By having one simple language which can be understood by a wide variety of different platforms and
- * operating systems, this makes life easier for us programmers to have our programs communicate with each other, and
- * work on more devices.
- */
+//JSON to store game data
 public class LocalStorageImpl implements IStorage {
 
     private static File GAME_DATA = new File(
